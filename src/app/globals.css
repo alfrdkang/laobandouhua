@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+:root {
+  --brand-yellow: #FFE500;
+  --brand-yellow-dark: #E6CE00;
+  --brand-black: #1A1A1A;
+  --brand-white: #FFFFFF;
+  --brand-gray: #F5F5F5;
+  --brand-gray-dark: #888888;
+  --brand-text: #2D2D2D;
+}
+
+@theme {
+  --color-LB-yellow: #FFEF01;
+  --color-LB-black: #1A1A1A;
+  --font-montserrat: var(--font-montserrat);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--brand-text);
+  background: var(--brand-white);
+}
