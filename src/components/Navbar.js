@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Our Story', href: '/our-story' },
+  { label: 'Our Story', href: '/story' },
   { label: 'Menu', href: '/menu' },
   { label: 'Outlets', href: '/outlets' },
   { label: 'Contact', href: '/contact' },
@@ -91,7 +91,7 @@ export default function Navbar() {
           <nav className="sm:hidden flex flex-col items-center gap-3 pb-4">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}
-                className="text-sm text-LB-black font-medium hover:underline">
+                className="text-md text-LB-black font-bold hover:underline my-2">
                 {link.label}
               </Link>
             ))}

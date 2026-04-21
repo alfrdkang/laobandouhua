@@ -6,7 +6,7 @@ export default function HomePage() {
       {/* Hero Banner */}
       <section
         className="w-full bg-gray-300 flex items-center justify-center"
-        style={{ height: "400px" }}
+        style={{ height: "800px" }}
       >
         <h1 className="text-6xl md:text-7xl font-bold text-gray-500 select-none tracking-widest">
           Banner
@@ -104,7 +104,7 @@ export default function HomePage() {
 
       {/* Tagline */}
       <section className="w-full bg-white py-20 md:py-28 px-6 flex flex-col items-center justify-center">
-        <img src="/images/Home/tagline.png" className="w-5/6 xl:w-1/3 h-auto object-contain mb-14" />
+        <img src="/images/tagline.png" className="w-5/6 xl:w-1/3 h-auto object-contain mb-14" />
         <p className="text-2xl sm:text-4xl text-[#555] italic">
           Authentic Lao Ban, Always With Love
         </p>

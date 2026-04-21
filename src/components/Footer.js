@@ -70,7 +70,7 @@ export default function Footer() {
           <img
             src="images/Footer/beancurd.png"
             alt="Beancurd"
-            className="w-12 h-12 md:w-14 md:h-14 bg-white rounded-lg shadow-sm"
+            className="hidden sm:flex w-12 h-12 md:w-14 md:h-14 bg-white rounded-lg shadow-sm"
           />
         </div>
       </div>
