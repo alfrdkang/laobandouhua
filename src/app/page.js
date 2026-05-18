@@ -35,7 +35,7 @@ export default function HomePage() {
       </section>
 
       {/* Brand Strip */}
-      <section className="w-full bg-white pb-10 md:pb-28">
+      <section className="w-full bg-white">
         <div className="w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-12 md:gap-20">
 
           <div className="flex-1 flex justify-center md:justify-start items-center p-4">
@@ -63,7 +63,7 @@ export default function HomePage() {
       {/* Three Pillars */}
       <section className="w-full bg-white py-20 md:py-28">
         <div className="w-full max-w-6xl mx-auto px-6 md:px-12">
-          <div className="flex flex-col md:flex-row items-stretch gap-8 md:gap-10">
+          <div className="flex flex-col lg:flex-row items-stretch gap-8 md:gap-10">
             {[
               { label: "Premium Soybean", bg: "images/Home/premium.png" },
               { label: "Authentic Craftsmanship", bg: "images/Home/authentic.png" },
@@ -73,7 +73,7 @@ export default function HomePage() {
                 key={label}
                 className="flex-1 flex flex-col bg-[#FFF9C4] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
               >
-                <img src={bg} className="w-full h-56 sm:h-72 md:h-80 object-fill" />
+                <img src={bg} className="w-full h-88 md:h-100 object-cover" />
                 <div className="px-6 py-7">
                   <h3 className="font-bold text-LB-black text-2xl md:text-3xl leading-tight w-3/4">{label}</h3>
                 </div>
@@ -91,7 +91,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gray-800 opacity-60" />
         <div className="relative z-10 flex flex-col items-center justify-center py-20 px-6 text-center">
           <p className="text-white text-3xl md:text-4xl font-extrabold mb-10 max-w-2xl leading-tight">
-            Find your nearest outlet today <span className="text-blue-300">across</span><br className="hidden sm:inline" /> our islandwide locations.
+            Find your nearest outlet today across our islandwide locations.
           </p>
           <Link
             href="/outlets"
@@ -105,7 +105,7 @@ export default function HomePage() {
       {/* Tagline */}
       <section className="w-full bg-white py-20 md:py-28 px-6 flex flex-col items-center justify-center">
         <img src="/images/tagline.png" className="w-5/6 xl:w-1/3 h-auto object-contain mb-14" />
-        <p className="text-2xl sm:text-4xl text-[#555] italic">
+        <p className="text-center text-2xl sm:text-4xl text-[#555] italic">
           Authentic Lao Ban, Always With Love
         </p>
       </section>

@@ -15,7 +15,7 @@ export default function Story() {
             {/* Tagline */}
             <section className="w-full bg-white py-20 md:py-28 px-6 flex flex-col items-center justify-center">
                 <img src="/images/tagline.png" className="w-5/6 xl:w-1/3 h-auto object-contain mb-14" />
-                <p className="text-2xl md:text-3xl text-[#555] italic">
+                <p className="text-2xl md:text-3xl text-[#555] italic text-center">
                     Authentic Lao Ban, Always With Love
                 </p>
             </section>
