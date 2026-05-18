@@ -166,7 +166,7 @@ export default function Menu() {
             <p className="text-xl sm:text-2xl md:text-3xl font-bold text-LB-black leading-snug">
               Simple delights made with dedication since 1970
             </p>
-            <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
+            <div className="flex flex-wrap gap-4 justify-center sm:justify-start items-center">
               <Link
                 href="#"
                 className="bg-LB-yellow text-LB-black font-bold text-base px-7 py-2.5 rounded-full hover:brightness-95 transition-all shadow-sm"
