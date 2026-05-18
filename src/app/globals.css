@@ -23,11 +23,11 @@ html {
 body {
   color: var(--brand-text);
   background: var(--brand-white);
-  cursor: url('/images/Cursor/cursorV1.png') 0 0, default;
+  cursor: url('/images/Cursor/cursorV1-64x64.png') 0 0, default;
 }
 
 body:active {
-  cursor: url('/images/Cursor/cursorV1_click.png') 0 0, default;
+  cursor: url('/images/Cursor/cursorV1_click-64x64.png') 0 0, default;
 }
 
 a,
@@ -36,5 +36,5 @@ button,
 input[type="submit"],
 input[type="button"],
 input[type="reset"] {
-  cursor: url('/images/Cursor/cursorV1_click.png') 0 0, pointer;
+  cursor: url('/images/Cursor/cursorV1_click-64x64.png') 0 0, pointer;
 }
