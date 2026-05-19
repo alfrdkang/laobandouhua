@@ -4,14 +4,26 @@ export default function Story() {
     return (
         <>
             {/* Hero Banner */}
-            <section
+            {/* <section
                 className="w-full bg-gray-300 flex items-center justify-center"
                 style={{ height: "800px" }}
             >
                 <h1 className="text-6xl md:text-7xl font-bold text-gray-500 select-none tracking-widest">
                     Autoplay Video
                 </h1>
-            </section>
+            </section> */}
+            <div className="relative w-full h-256 rounded-xl">
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover"
+                >
+                    <source src="/videos/interview.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
             {/* Tagline */}
             <section className="w-full bg-white py-20 md:py-28 px-6 flex flex-col items-center justify-center">
                 <img src="/images/tagline.png" className="w-5/6 xl:w-1/3 h-auto object-contain mb-14" />

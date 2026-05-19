@@ -8,15 +8,15 @@ const CONTACT_CARDS = [
     title: 'Franchise & Distribution',
     body: (
       <>
-        <p className="text-sm text-gray-500 leading-relaxed">
+        <p className="text-sm text-LB-black leading-relaxed">
           Authentic Lao Ban is expanding internationally and welcomes partners to bring our authentic
           and meaningful food experiences.
         </p>
-        <p className="text-sm text-gray-500 leading-relaxed mt-3">
+        <p className="text-sm text-LB-black leading-relaxed mt-3">
           We also offer food distribution partnerships for retail outlets, supermarkets, and food operators
           interested in carrying Authentic Lao Ban products.
         </p>
-        <p className="text-sm text-gray-500 leading-relaxed mt-3">
+        <p className="text-sm text-LB-black leading-relaxed mt-3">
           For franchise or distribution enquiries, please contact us.
         </p>
       </>
@@ -30,20 +30,20 @@ const CONTACT_CARDS = [
     title: 'Events, Bulk Orders & Collaborations',
     body: (
       <>
-        <p className="text-sm text-gray-500 leading-relaxed mb-3">
+        <p className="text-sm font-semibold text-LB-black leading-relaxed mb-3">
           Celebrate with Authentic Lao Ban!
         </p>
-        <ul className="flex flex-col gap-2.5">
+        <ul className="flex flex-col gap-2.5 my-8">
           {[
             { label: 'Corporate & Special Events', desc: 'Impress guests, delight employees, or add a sweet touch to any occasion.' },
             { label: 'Bulk Orders', desc: 'Flexible quantities for parties, gatherings, or celebrations.' },
             { label: 'Collaborations', desc: 'Partner with us for co-branded products, pop-ups, or creative campaigns.' },
           ].map(({ label, desc }) => (
             <li key={label} className="flex items-start gap-2.5">
-              <img src="/images/Contact/check.png" alt="" className="w-6 h-6 object-contain mt-0.5 shrink-0" />
+              <img src="/images/Contact/check.png" alt="" className="w-6 h-6 object-contain m-1.5 shrink-0" />
               <div>
                 <span className="text-sm font-bold text-LB-black">{label}</span>
-                <p className="text-xs text-gray-500 leading-snug">{desc}</p>
+                <p className="text-xs text-LB-black leading-snug">{desc}</p>
               </div>
             </li>
           ))}
@@ -60,10 +60,10 @@ const CAREER_CARD = {
   title: 'Career Opportunities',
   body: (
     <>
-      <p className="text-sm text-gray-500 leading-relaxed">
+      <p className="text-sm text-LB-black leading-relaxed">
         We welcome individuals who share our passion for quality food and sincere service to join our growing team.
       </p>
-      <p className="text-sm text-gray-500 leading-relaxed mt-3">
+      <p className="text-sm text-LB-black leading-relaxed mt-3">
         Be part of a brand that values tradition, teamwork, and genuine connections.
       </p>
     </>
@@ -79,7 +79,7 @@ function ContactCard({ icon, title, body, btnLabel, btnHref }) {
       {/* Header */}
       <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
         <img src={icon} alt={title} className="w-10 h-10 object-contain shrink-0" />
-        <h2 className="text-lg sm:text-xl font-extrabold text-LB-black leading-snug">{title}</h2>
+        <h2 className="text-lg sm:text-xl font-bold text-LB-black leading-snug">{title}</h2>
       </div>
 
       {/* Body */}
@@ -108,10 +108,10 @@ export default function Contact() {
         <div className="max-w-2xl mx-auto flex flex-col items-center text-center">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-10 h-1 bg-LB-yellow rounded-full" />
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-LB-black">Contact Us</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold text-LB-black">Contact Us</h1>
             <div className="w-10 h-1 bg-LB-yellow rounded-full" />
           </div>
-          <p className="text-gray-500 text-base sm:text-lg leading-relaxed mt-3">
+          <p className="text-LB-black text-base sm:text-lg leading-relaxed mt-3">
             We&apos;re here for you. Whether you&apos;re a customer, partner,<br className="hidden sm:block" />
             or future team member, we&apos;d love to hear from you.
           </p>
@@ -143,26 +143,26 @@ export default function Contact() {
           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-7 flex flex-col gap-5">
             <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
               <img src="/images/Contact/create.png" alt="Create Together" className="w-10 h-10 object-contain shrink-0" />
-              <h2 className="text-lg sm:text-xl font-extrabold text-LB-black leading-snug">
+              <h2 className="text-lg sm:text-xl font-bold text-LB-black leading-snug">
                 Let&apos;s Create Something Together
               </h2>
             </div>
 
             <div className="flex-1">
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-sm text-LB-black leading-relaxed">
                 From enjoying our beancurd to partnering with us, we&apos;re always excited to connect with you.
               </p>
-              <p className="text-sm text-gray-500 leading-relaxed mt-3">
+              <p className="text-sm text-LB-black leading-relaxed mt-3">
                 Drop us an email and our team will get back to you as soon as possible.
               </p>
             </div>
 
             {/* Handwritten look-forward note */}
-            <div className="mt-2">
+            <div className="flex justify-center items-center">
               <img
                 src="/images/Contact/lookForward.png"
                 alt="We look forward to hearing from you!"
-                className="w-56 sm:w-64 h-auto object-contain"
+                className="w-72 sm:w-100 h-auto object-contain"
               />
             </div>
           </div>
@@ -173,9 +173,9 @@ export default function Contact() {
       <section className="w-full bg-gray-50 py-14 px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section heading */}
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-LB-black">Get In Touch</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-LB-black">Get In Touch</h2>
           <div className="w-20 h-2 bg-LB-yellow rounded-full my-6" />
-          <p className="text-sm text-gray-500 mb-8 max-w-lg">
+          <p className="text-sm text-LB-black mb-8 max-w-lg">
             For all enquiries about products, distribution, franchise partnerships, careers, events, bulk orders or co-branding:
           </p>
 
@@ -294,7 +294,7 @@ export default function Contact() {
           className="w-5/6 xl:w-1/3 h-auto object-contain mb-10"
           alt="正宗老伴、有爱相伴"
         />
-        <p className="text-2xl sm:text-3xl md:text-4xl text-gray-500 italic text-center">
+        <p className="text-2xl sm:text-3xl md:text-4xl text-LB-black italic text-center">
           Authentic Lao Ban, Always With Love
         </p>
       </section>
