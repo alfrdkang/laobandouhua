@@ -88,7 +88,7 @@ function ContactCard({ icon, title, body, btnLabel, btnHref }) {
       {/* CTA Button */}
       <a
         href={btnHref}
-        className="mt-auto inline-flex items-center gap-2 bg-LB-yellow text-LB-black font-bold text-sm px-6 py-2.5 rounded-full hover:brightness-95 transition-all self-start shadow-sm"
+        className="text-center w-full lg:w-auto mt-auto justify-center items-center inline-flex gap-2 bg-LB-yellow text-LB-black font-bold text-sm px-6 py-2.5 rounded-full hover:brightness-95 transition-all self-start shadow-sm"
       >
         {btnLabel}
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -99,11 +99,11 @@ function ContactCard({ icon, title, body, btnLabel, btnHref }) {
   );
 }
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
+//  Page 
 export default function Contact() {
   return (
     <>
-      {/* ── Hero Header ────────────────────────────────────────────────────── */}
+      {/* Hero Header */}
       <section className="w-full bg-white pt-16 pb-10 px-6">
         <div className="max-w-2xl mx-auto flex flex-col items-center text-center">
           <div className="flex items-center gap-4 mb-4">
@@ -170,8 +170,8 @@ export default function Contact() {
       </section>
 
       {/* ── Get In Touch ──────────────────────────────────────────────────── */}
-      <section className="w-full bg-gray-50 py-14 px-6">
-        <div className="max-w-5xl mx-auto">
+      <section className="w-full flex flex-col md:flex-row items-center justify-center bg-gray-50 py-14 px-6">
+        <div className="w-5/6 md:w-1/2">
           {/* Section heading */}
           <h2 className="text-2xl sm:text-3xl font-bold text-LB-black">Get In Touch</h2>
           <div className="w-20 h-2 bg-LB-yellow rounded-full my-6" />
@@ -191,7 +191,7 @@ export default function Contact() {
                     href="mailto:laobanyf@gmail.com"
                     className="text-sm font-semibold text-LB-black hover:underline underline-offset-4 transition-all"
                   >
-                    laobanyf@gmail.com
+                    laobansybc@gmail.com
                   </a>
                 </div>
               </div>
@@ -205,7 +205,7 @@ export default function Contact() {
                     href="tel:+6596562908"
                     className="text-sm font-semibold text-LB-black hover:underline underline-offset-4 transition-all"
                   >
-                    03 9656 2908
+                    +65 8686 2808
                   </a>
                 </div>
               </div>
@@ -217,13 +217,13 @@ export default function Contact() {
                   <p className="text-xs text-gray-400 font-medium mb-0.5">Address</p>
                   <p className="text-sm font-semibold text-LB-black leading-snug">
                     Blk 1550, Bedok North Ave 4,<br />
-                    #08-17, Bedok Food City 489950
+                    #03-17, Bedok Food City 489950
                   </p>
                 </div>
               </div>
 
               {/* Social Icons */}
-              <div className="flex items-center gap-5 my-4">
+              <div className="flex items-center gap-5 my-4 mx-1">
                 <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
                   className="text-LB-black hover:opacity-70 transition-opacity">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -244,21 +244,20 @@ export default function Contact() {
                 </a>
               </div>
             </div>
-
-            {/* Store Photo */}
-            <div className="w-full sm:w-64 lg:w-80 shrink-0">
-              <img
-                src="/images/Contact/getInTouch.png"
-                alt="Authentic Lao Ban store"
-                className="w-full h-48 sm:h-56 lg:h-64 object-cover rounded-2xl shadow-sm"
-              />
-            </div>
           </div>
+        </div>
+        {/* Store Photo */}
+        <div className="w-full w-64 md:w-80 my-12">
+          <img
+            src="/images/Contact/getInTouch.png"
+            alt="Authentic Lao Ban store"
+            className="w-full h-96 lg:h-128 object-cover"
+          />
         </div>
       </section>
 
       {/* ── CTA Banner ────────────────────────────────────────────────────── */}
-      <section className="w-full bg-white py-14 px-6">
+      <section className="w-full bg-white py-14 px-12">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center gap-8">
           <img
             src="/images/Menu/logo.png"

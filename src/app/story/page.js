@@ -3,16 +3,7 @@ import Link from "next/link";
 export default function Story() {
     return (
         <>
-            {/* Hero Banner */}
-            {/* <section
-                className="w-full bg-gray-300 flex items-center justify-center"
-                style={{ height: "800px" }}
-            >
-                <h1 className="text-6xl md:text-7xl font-bold text-gray-500 select-none tracking-widest">
-                    Autoplay Video
-                </h1>
-            </section> */}
-            <div className="relative w-full h-256 rounded-xl">
+            <div className="relative w-full lg:h-256 h-0 rounded-xl">
                 <video
                     autoPlay
                     muted

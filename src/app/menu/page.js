@@ -155,7 +155,7 @@ export default function Menu() {
       </section>
 
       {/* CTA Banner */}
-      <section className="w-full bg-white py-14 px-6">
+      <section className="w-full bg-white py-14 px-12">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center gap-8">
           <img
             src="/images/Menu/logo.png"

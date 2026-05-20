@@ -339,7 +339,6 @@ function LocationCard({ outlet }) {
   );
 }
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
 export default function Outlets() {
   const [activeCategory, setActiveCategory] = useState('supermarkets');
   const [openChainId, setOpenChainId] = useState(null);
@@ -405,9 +404,9 @@ export default function Outlets() {
             ))}
           </div>
 
-          {/* Supermarket chains — 2-col grid */}
+          {/* Supermarket chains */}
           {showSupermarkets && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {SUPERMARKET_CHAINS.map((chain) => (
                 <SupermarketCard
                   key={chain.id}
@@ -421,7 +420,7 @@ export default function Outlets() {
             </div>
           )}
 
-          {/* Individual locations — 3-col grid */}
+          {/* Individual locations */}
           {!showSupermarkets && (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {filteredLocations.map((outlet) => (
@@ -436,7 +435,7 @@ export default function Outlets() {
       </section>
 
       {/* CTA Banner */}
-      <section className="w-full bg-white py-14 px-6">
+      <section className="w-full bg-white py-14 px-12">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center gap-8">
           <img
             src="/images/Menu/logo.png"
