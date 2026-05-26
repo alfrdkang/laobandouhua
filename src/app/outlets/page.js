@@ -315,7 +315,7 @@ function LocationCard({ outlet }) {
         <h3 className="text-base font-bold text-LB-black leading-snug">{outlet.name}</h3>
 
         <div className="flex items-start gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-LB-yellow shrink-0 mt-0.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-LB-darkYellow shrink-0 mt-0.5">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
           </svg>
           <span className="text-xs text-gray-500 font-medium">{outlet.categoryLabel}</span>

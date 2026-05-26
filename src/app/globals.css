@@ -12,6 +12,7 @@
 
 @theme {
   --color-LB-yellow: #FFEF01;
+  --color-LB-darkYellow: #DFD52B;
   --color-LB-black: #1A1A1A;
   --font-montserrat: var(--font-montserrat);
 }

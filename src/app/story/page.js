@@ -41,7 +41,7 @@ export default function Story() {
                         <div className="space-y-5 text-[#555] text-base md:text-[17px] leading-relaxed max-w-lg">
                             <p>
                                 Since{" "}
-                                <strong className="text-LB-yellow text-2xl md:text-3xl">1978</strong>, Mr.
+                                <strong className="text-LB-darkYellow text-2xl md:text-3xl">1978</strong>, Mr.
                                 Li Pui Shing has been crafting traditional Chinese desserts,
                                 starting with tang yuan and later perfecting the silky smooth
                                 beancurd that would become Lao Ban's signature.
@@ -100,7 +100,7 @@ export default function Story() {
                                 },
                             ].map(({ title, body }, index) => (
                                 <div key={title} data-aos="fade-up" data-aos-delay={index * 100}>
-                                    <h3 className="text-2xl md:text-3xl font-bold text-LB-yellow mb-2">
+                                    <h3 className="text-2xl md:text-3xl font-bold text-LB-darkYellow mb-2">
                                         {title}
                                     </h3>
                                     <p className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-lg">
@@ -136,7 +136,7 @@ export default function Story() {
                         <div>
                             <h3 className="text-3xl md:text-4xl font-bold text-LB-black mb-4">
                                 Consistency Since{" "}
-                                <span className="text-LB-yellow">1978</span>
+                                <span className="text-LB-darkYellow">1978</span>
                             </h3>
                             <p className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-lg">
                                 Trusted for reliable quality and authentic taste across all
@@ -144,7 +144,7 @@ export default function Story() {
                             </p>
                         </div>
                         <div>
-                            <h3 className="text-3xl md:text-4xl font-bold text-LB-yellow mb-4">
+                            <h3 className="text-3xl md:text-4xl font-bold text-LB-darkYellow mb-4">
                                 Made to Bring People Together
                             </h3>
                             <p className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-lg">
@@ -183,7 +183,7 @@ export default function Story() {
                                 },
                             ].map(({ title, body }, index) => (
                                 <div key={title} data-aos="fade-up" data-aos-delay={index * 100}>
-                                    <h3 className="text-2xl md:text-3xl font-bold text-LB-yellow mb-2">
+                                    <h3 className="text-2xl md:text-3xl font-bold text-LB-darkYellow mb-2">
                                         {title}
                                     </h3>
                                     <p className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-lg">

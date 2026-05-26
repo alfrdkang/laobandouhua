@@ -4,15 +4,14 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Banner */}
-      <section
-        className="w-full bg-gray-300 flex items-center justify-center"
+      <img
+        src="/images/Home/banner.png"
+        alt="Hero Banner"
+        className="w-full bg-gray-300 flex items-center justify-center object-cover"
         style={{ height: "800px" }}
         data-aos="fade-in"
       >
-        <h1 className="text-6xl md:text-7xl font-bold text-gray-500 select-none tracking-widest">
-          Banner
-        </h1>
-      </section>
+      </img>
 
       {/* Legacy Section */}
       <section className="w-full bg-white pt-10 md:pt-28">
