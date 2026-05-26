@@ -73,9 +73,9 @@ const CAREER_CARD = {
 };
 
 // ─── Reusable Components ──────────────────────────────────────────────────────
-function ContactCard({ icon, title, body, btnLabel, btnHref }) {
+function ContactCard({ icon, title, body, btnLabel, btnHref, "data-aos": dataAos, "data-aos-delay": dataAosDelay }) {
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-7 flex flex-col gap-5">
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-7 flex flex-col gap-5" data-aos={dataAos} data-aos-delay={dataAosDelay}>
       {/* Header */}
       <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
         <img src={icon} alt={title} className="w-10 h-10 object-contain shrink-0" />
@@ -106,12 +106,12 @@ export default function Contact() {
       {/* Hero Header */}
       <section className="w-full bg-white pt-16 pb-10 px-6">
         <div className="max-w-2xl mx-auto flex flex-col items-center text-center">
-          <div className="flex items-center gap-4 mb-4">
+          <div className="flex items-center gap-4 mb-4" data-aos="fade-in">
             <div className="w-10 h-1 bg-LB-yellow rounded-full" />
             <h1 className="text-4xl sm:text-5xl font-bold text-LB-black">Contact Us</h1>
             <div className="w-10 h-1 bg-LB-yellow rounded-full" />
           </div>
-          <p className="text-LB-black text-base sm:text-lg leading-relaxed mt-3">
+          <p className="text-LB-black text-base sm:text-lg leading-relaxed mt-3" data-aos="fade-up" data-aos-delay="100">
             We&apos;re here for you. Whether you&apos;re a customer, partner,<br className="hidden sm:block" />
             or future team member, we&apos;d love to hear from you.
           </p>
@@ -121,8 +121,8 @@ export default function Contact() {
       {/* ── Top Contact Cards (Franchise + Events) ─────────────────────────── */}
       <section className="w-full bg-white py-8 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {CONTACT_CARDS.map((card) => (
-            <ContactCard key={card.id} {...card} />
+          {CONTACT_CARDS.map((card, index) => (
+            <ContactCard key={card.id} {...card} data-aos="fade-up" data-aos-delay={index * 100} />
           ))}
         </div>
       </section>
@@ -137,10 +137,11 @@ export default function Contact() {
             body={CAREER_CARD.body}
             btnLabel={CAREER_CARD.btnLabel}
             btnHref={CAREER_CARD.btnHref}
+            data-aos="fade-up"
           />
 
           {/* Let's Create Something Together */}
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-7 flex flex-col gap-5">
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-7 flex flex-col gap-5" data-aos="fade-up" data-aos-delay="100">
             <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
               <img src="/images/Contact/create.png" alt="Create Together" className="w-10 h-10 object-contain shrink-0" />
               <h2 className="text-lg sm:text-xl font-bold text-LB-black leading-snug">
@@ -171,7 +172,7 @@ export default function Contact() {
 
       {/* ── Get In Touch ──────────────────────────────────────────────────── */}
       <section className="w-full flex flex-col md:flex-row items-center justify-center bg-gray-50 py-14 px-6">
-        <div className="w-5/6 md:w-1/2">
+        <div className="w-5/6 md:w-1/2" data-aos="fade-right">
           {/* Section heading */}
           <h2 className="text-2xl sm:text-3xl font-bold text-LB-black">Get In Touch</h2>
           <div className="w-20 h-2 bg-LB-yellow rounded-full my-6" />
@@ -247,7 +248,7 @@ export default function Contact() {
           </div>
         </div>
         {/* Store Photo */}
-        <div className="w-full w-64 md:w-80 my-12">
+        <div className="w-full w-64 md:w-80 my-12" data-aos="fade-left">
           <img
             src="/images/Contact/getInTouch.png"
             alt="Authentic Lao Ban store"
@@ -263,8 +264,9 @@ export default function Contact() {
             src="/images/Menu/logo.png"
             alt="Lao Ban mascot"
             className="w-36 sm:w-48 h-auto object-contain shrink-0"
+            data-aos="fade-right"
           />
-          <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-5">
+          <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-5" data-aos="fade-left">
             <p className="text-xl sm:text-2xl md:text-3xl font-bold text-LB-black leading-snug">
               Simple delights made with dedication since 1978
             </p>
@@ -292,8 +294,9 @@ export default function Contact() {
           src="/images/tagline.png"
           className="w-5/6 xl:w-1/3 h-auto object-contain mb-10"
           alt="正宗老伴、有爱相伴"
+          data-aos="fade-up"
         />
-        <p className="text-2xl sm:text-3xl md:text-4xl text-LB-black italic text-center">
+        <p className="text-2xl sm:text-3xl md:text-4xl text-LB-black italic text-center" data-aos="fade-up" data-aos-delay="150">
           Authentic Lao Ban, Always With Love
         </p>
       </section>

@@ -17,8 +17,8 @@ export default function Story() {
             </div>
             {/* Tagline */}
             <section className="w-full bg-white py-20 md:py-28 px-6 flex flex-col items-center justify-center">
-                <img src="/images/tagline.png" className="w-5/6 xl:w-1/3 h-auto object-contain mb-14" />
-                <p className="text-2xl md:text-3xl text-[#555] italic text-center">
+                <img data-aos="fade-up" src="/images/tagline.png" className="w-5/6 xl:w-1/3 h-auto object-contain mb-14" />
+                <p data-aos="fade-up" data-aos-delay="150" className="text-2xl md:text-3xl text-[#555] italic text-center">
                     Authentic Lao Ban, Always With Love
                 </p>
             </section>
@@ -26,7 +26,7 @@ export default function Story() {
             {/* Heritage */}
             <section className="w-full bg-white pb-20 md:pb-28">
                 <div className="w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-12 md:gap-16">
-                    <div className="flex-1 flex justify-center md:justify-start">
+                    <div data-aos="fade-right" className="flex-1 flex justify-center md:justify-start">
                         <img
                             src="/images/Story/history.png"
                             alt="Our Heritage"
@@ -34,7 +34,7 @@ export default function Story() {
                         />
                     </div>
 
-                    <div className="flex-1 flex flex-col justify-center text-left">
+                    <div data-aos="fade-left" className="flex-1 flex flex-col justify-center text-left">
                         <h2 className="text-4xl sm:text-5xl font-extrabold text-LB-black mb-8 leading-snug">
                             Our Heritage
                         </h2>
@@ -78,7 +78,7 @@ export default function Story() {
             {/* Why Lao Ban Beancurd is Different */}
             <section className="w-full bg-white pb-20 md:pb-28">
                 <div className="w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-12 md:gap-16">
-                    <div className="flex-1 flex flex-col justify-center text-left">
+                    <div data-aos="fade-right" className="flex-1 flex flex-col justify-center text-left">
                         <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-LB-black mb-10 leading-snug">
                             Why Lao Ban
                             <br />
@@ -98,8 +98,8 @@ export default function Story() {
                                     title: "A Brand Built on Companionship",
                                     body: "The Lao Ban icon represents love, care, and togetherness — reminding us that desserts are best enjoyed with people we love.",
                                 },
-                            ].map(({ title, body }) => (
-                                <div key={title}>
+                            ].map(({ title, body }, index) => (
+                                <div key={title} data-aos="fade-up" data-aos-delay={index * 100}>
                                     <h3 className="text-2xl md:text-3xl font-bold text-LB-yellow mb-2">
                                         {title}
                                     </h3>
@@ -111,7 +111,7 @@ export default function Story() {
                         </div>
                     </div>
 
-                    <div className="flex-1 flex justify-center md:justify-end">
+                    <div data-aos="fade-left" className="flex-1 flex justify-center md:justify-end">
                         <img
                             src="/images/Story/different.png"
                             alt="Why Lao Ban Beancurd is Different"
@@ -124,7 +124,7 @@ export default function Story() {
             {/* Consistency */}
             <section className="w-full bg-white pb-20 md:pb-28">
                 <div className="w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-12 md:gap-16">
-                    <div className="flex-1 flex justify-center md:justify-start">
+                    <div data-aos="fade-right" className="flex-1 flex justify-center md:justify-start">
                         <img
                             src="/images/Story/legacy.png"
                             alt="Consistency Since 1978"
@@ -132,7 +132,7 @@ export default function Story() {
                         />
                     </div>
 
-                    <div className="flex-1 flex flex-col justify-center text-left gap-12">
+                    <div data-aos="fade-left" className="flex-1 flex flex-col justify-center text-left gap-12">
                         <div>
                             <h3 className="text-3xl md:text-4xl font-bold text-LB-black mb-4">
                                 Consistency Since{" "}
@@ -159,7 +159,7 @@ export default function Story() {
             {/* Our Craft */}
             <section className="w-full bg-white pb-20 md:pb-28">
                 <div className="w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-12 md:gap-16">
-                    <div className="flex-1 flex flex-col justify-center text-left">
+                    <div data-aos="fade-right" className="flex-1 flex flex-col justify-center text-left">
                         <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-LB-black mb-10 leading-snug">
                             Our Craft
                         </h2>
@@ -181,8 +181,8 @@ export default function Story() {
                                     title: "A Family Tradition",
                                     body: "Inspired by family care and companionship, passed from Mr. Li Pui Shing to Li Fang Yan, and shared with every customer.",
                                 },
-                            ].map(({ title, body }) => (
-                                <div key={title}>
+                            ].map(({ title, body }, index) => (
+                                <div key={title} data-aos="fade-up" data-aos-delay={index * 100}>
                                     <h3 className="text-2xl md:text-3xl font-bold text-LB-yellow mb-2">
                                         {title}
                                     </h3>
@@ -194,7 +194,7 @@ export default function Story() {
                         </div>
                     </div>
 
-                    <div className="flex-1 flex justify-center md:justify-end">
+                    <div data-aos="fade-left" className="flex-1 flex justify-center md:justify-end">
                         <div className="border-4 border-LB-yellow rounded-2xl overflow-hidden shadow-lg w-full max-w-sm md:max-w-none">
                             <img
                                 src="/images/Story/craft.png"

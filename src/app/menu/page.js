@@ -63,7 +63,7 @@ const SOYA_MILK = [
 
 function SectionHeading({ children }) {
   return (
-    <div className="flex items-center gap-3 mb-8">
+    <div className="flex items-center gap-3 mb-8" data-aos="fade-right">
       <div className="w-10 h-1 bg-LB-yellow rounded-full" />
       <h2 className="text-2xl sm:text-3xl font-extrabold text-LB-black">
         {children}
@@ -74,7 +74,7 @@ function SectionHeading({ children }) {
 
 function MenuCard({ name, desc, img, isNew }) {
   return (
-    <div className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+    <div className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100" data-aos="fade-up">
       <div className="relative">
         {isNew && (
           <span className="absolute top-2 left-2 bg-LB-yellow text-LB-black text-xs font-bold px-2 py-0.5 rounded">
@@ -97,17 +97,17 @@ export default function Menu() {
       {/* Our Menu header */}
       <section className="w-full bg-white pt-16 pb-10 px-6">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
-          <div className="flex items-center gap-4 mb-4">
+          <div className="flex items-center gap-4 mb-4" data-aos="fade-in">
             <div className="w-10 h-1 bg-LB-yellow rounded-full" />
             <h1 className="text-4xl sm:text-5xl font-extrabold text-LB-black">Our Menu</h1>
             <div className="w-10 h-1 bg-LB-yellow rounded-full" />
           </div>
-          <p className="text-gray-500 text-lg sm:text-xl max-w-xl leading-relaxed mb-10">
+          <p className="text-gray-500 text-lg sm:text-xl max-w-xl leading-relaxed mb-10" data-aos="fade-up" data-aos-delay="100">
             Simple, comforting desserts that celebrate traditional flavours enjoyed by generations across Singapore.
           </p>
 
           {/* Pillars */}
-          <div className="flex flex-wrap justify-center gap-6 sm:gap-10">
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-10" data-aos="fade-up" data-aos-delay="200">
             {PILLARS.map(({ label, icon }) => (
               <div key={label} className="flex items-center gap-2">
                 <img src={icon} alt={label} className="w-7 h-7 object-contain" />
@@ -161,8 +161,9 @@ export default function Menu() {
             src="/images/Menu/logo.png"
             alt="Lao Ban mascot"
             className="w-36 sm:w-48 h-auto object-contain shrink-0"
+            data-aos="fade-right"
           />
-          <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-5">
+          <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-5" data-aos="fade-left">
             <p className="text-xl sm:text-2xl md:text-3xl font-bold text-LB-black leading-snug">
               Simple delights made with dedication since 1970
             </p>
@@ -186,8 +187,8 @@ export default function Menu() {
 
       {/* Tagline */}
       <section className="w-full bg-white py-20 md:py-28 px-6 flex flex-col items-center justify-center">
-        <img src="/images/tagline.png" className="w-5/6 xl:w-1/3 h-auto object-contain mb-10" alt="正宗老伴、有爱相伴" />
-        <p className="text-2xl sm:text-3xl md:text-4xl text-gray-500 italic text-center">
+        <img src="/images/tagline.png" className="w-5/6 xl:w-1/3 h-auto object-contain mb-10" alt="正宗老伴、有爱相伴" data-aos="fade-up" />
+        <p className="text-2xl sm:text-3xl md:text-4xl text-gray-500 italic text-center" data-aos="fade-up" data-aos-delay="150">
           Authentic Lao Ban, Always With Love
         </p>
       </section>
