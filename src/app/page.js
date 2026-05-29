@@ -1,8 +1,10 @@
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 
 export default function HomePage() {
   return (
     <>
+      <Navbar disableLogo={true} />
       {/* Hero Banner */}
       <picture data-aos="fade-in">
         <source media="(min-width: 1024px)" srcSet="/images/Home/banner/1920x1080.webp" />

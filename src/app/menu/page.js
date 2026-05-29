@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 
 const PILLARS = [
   { label: "Authentic Craftsmanship", icon: "/images/Menu/authentic.png" },
@@ -94,6 +95,7 @@ function MenuCard({ name, desc, img, isNew }) {
 export default function Menu() {
   return (
     <>
+      <Navbar />
       {/* Our Menu header */}
       <section className="w-full bg-white pt-16 pb-10 px-6">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">

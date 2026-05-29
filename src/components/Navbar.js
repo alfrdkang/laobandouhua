@@ -11,17 +11,17 @@ const navLinks = [
   { label: 'Contact', href: '/contact' },
 ];
 
-export default function Navbar() {
+export default function Navbar({ disableLogo = false }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="w-full bg-LB-yellow flex flex-col">
       <div className="w-full justify-center">
         {/* Top Row */}
-        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between py-5 relative">
+        <div className="max-w-6xl mx-auto px-6 flex flex-wrap sm:flex-nowrap items-center justify-between my-7 relative">
 
           {/* Social Icons */}
-          <div className="flex-1 flex items-center justify-start gap-5">
+          <div className="order-2 flex-1 flex items-center justify-start gap-5 sm:order-1">
             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
               className="text-LB-black hover:opacity-70 transition-opacity">
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
@@ -43,13 +43,15 @@ export default function Navbar() {
           </div>
 
           {/* Logo */}
-          <div className="flex-1 flex">
-            <Link href="/" className="flex gap-2 items-center select-none justify-center">
-              <img src="/images/Navbar/logo.png" alt="Logo" className="hidden sm:flex items-center justify-center" />
-            </Link>
-          </div>
+          {!disableLogo && (
+            <div className="order-1 w-full flex p-4 sm:p-0 justify-center mb-4 sm:mb-0 sm:order-2 sm:w-auto sm:flex-1">
+              <Link href="/" className="my-4 sm:my-0 w-full sm:w-auto flex items-center select-none justify-center">
+                <img src="/images/Navbar/logo.png" alt="Logo" className="w-full h-auto max-w-screen sm:max-w-none sm:h-24 md:h-28 lg:h-32 object-contain" />
+              </Link>
+            </div>
+          )}
 
-          <div className="flex-1 flex items-center justify-end">
+          <div className="order-3 flex-1 flex items-center justify-end">
             {/* Order Now */}
             <div className="hidden sm:flex flex-col items-center">
               <a href="https://wa.me/6586862808?text=Hi%20I'm%20interested%20in%20your%20beancurd%20"
@@ -61,7 +63,7 @@ export default function Navbar() {
               </span>
             </div>
 
-            {/* Mobile menu toggle (shows on right when below md) */}
+            {/* Mobile menu toggle */}
             <div className="sm:hidden flex justify-end">
               <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu" className="text-LB-black">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -88,7 +90,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation Menu */}
         {menuOpen && (
-          <nav className="sm:hidden flex flex-col items-center gap-3 pb-4">
+          <nav className="sm:hidden flex flex-col items-center gap-3 pb-14">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}
                 className="text-md text-LB-black font-bold hover:underline my-2">

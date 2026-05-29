@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Navbar from '@/components/Navbar';
 
 // Contact Cards Data
 const CONTACT_CARDS = [
@@ -103,6 +104,7 @@ function ContactCard({ icon, title, body, btnLabel, btnHref, "data-aos": dataAos
 export default function Contact() {
   return (
     <>
+      <Navbar />
       {/* Hero Header */}
       <section className="w-full bg-white pt-16 pb-10 px-6">
         <div className="max-w-2xl mx-auto flex flex-col items-center text-center">
@@ -248,7 +250,7 @@ export default function Contact() {
           </div>
         </div>
         {/* Store Photo */}
-        <div className="w-full w-64 md:w-80 my-12" data-aos="fade-left">
+        <div className="w-full md:w-80 my-12" data-aos="fade-left">
           <img
             src="/images/Contact/getInTouch.png"
             alt="Authentic Lao Ban store"

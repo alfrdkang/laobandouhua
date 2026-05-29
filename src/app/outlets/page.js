@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Navbar from "@/components/Navbar";
 
 const CHAIN_META = [
   { id: 'sheng-siong', name: 'Sheng Siong Supermarket', img: '/images/Outlets/Supermarkets/shengsiong.png', csv: 'ShengSiongOutlets.csv' },
@@ -317,6 +318,7 @@ export default function Outlets() {
 
   return (
     <>
+      <Navbar />
       {/* Header */}
       <section className="w-full bg-white py-20 px-6">
         <div className="max-w-2xl mx-auto flex flex-col items-center text-center">

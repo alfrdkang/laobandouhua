@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 
 export default function Story() {
     return (
         <>
-            <div className="relative w-full lg:h-256 h-0 rounded-xl">
+            <Navbar />
+            <div className="relative w-full h-256 rounded-xl">
                 <video
                     autoPlay
                     muted

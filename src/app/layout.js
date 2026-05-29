@@ -1,6 +1,5 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AOSInit from "@/components/AOSInit";
 
@@ -17,10 +16,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${montserrat.variable}`}>
+    <html lang="en" className={`${montserrat.variable} overflow-x-hidden data-scroll-behavior="smooth"`}>
       <body className="flex flex-col min-h-screen antialiased overflow-x-hidden w-full font-montserrat">
         <AOSInit />
-        <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
