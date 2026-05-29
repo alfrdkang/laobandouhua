@@ -12,7 +12,6 @@ const NEW_PRODUCTS = [
     name: "Herbal Jelly",
     desc: "Silky smooth, top-tier, refreshing.",
     img: "/images/Menu/herbalJelly.png",
-    isNew: true,
   },
 ];
 
@@ -73,16 +72,11 @@ function SectionHeading({ children }) {
   );
 }
 
-function MenuCard({ name, desc, img, isNew }) {
+function MenuCard({ name, desc, img }) {
   return (
     <div className="flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100" data-aos="fade-up">
       <div className="relative">
-        {isNew && (
-          <span className="absolute top-2 left-2 bg-LB-yellow text-LB-black text-xs font-bold px-2 py-0.5 rounded">
-            New
-          </span>
-        )}
-        <img src={img} alt={name} className="w-full h-44 sm:h-52 object-cover" />
+        <img src={img} alt={name} className="w-full h-auto object-contain" />
       </div>
       <div className="px-4 py-4">
         <h3 className="text-lg sm:text-xl font-bold text-LB-black mb-1">{name}</h3>

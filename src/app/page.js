@@ -10,7 +10,7 @@ export default function HomePage() {
         <source media="(min-width: 1024px)" srcSet="/images/Home/banner/1920x1080.webp" />
         <source media="(min-width: 640px)" srcSet="/images/Home/banner/1280×800.webp" />
         <img
-          src="/images/Home/banner/1080×1350.webp"
+          src="/images/Home/banner/1080x1650.webp"
           alt="Hero Banner"
           className="w-full h-auto object-cover"
         />
@@ -53,7 +53,7 @@ export default function HomePage() {
               Lao Ban a household name.
             </p>
             <Link
-              href="/our-story"
+              href="/story"
               className="inline-block bg-LB-yellow text-LB-black text-base font-bold px-8 py-3 rounded-full hover:bg-[#E6CE00] transition-colors shadow-sm"
             >
               Our Story

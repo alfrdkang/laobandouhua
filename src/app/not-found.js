@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 
 export default function NotFound() {
   return (
     <>
-      <section className="min-h-180 flex items-center justify-center px-6">
+      <Navbar />
+      <section className="h-216 flex items-center justify-center px-6">
         <div className="max-w-3xl text-center flex flex-col items-center">
           <div className="sm:hidden flex-1 flex justify-center md:justify-start items-center py-6">
             <img src="/images/Home/logo.png" className="w-full h-64 sm:h-72 object-contain p-4" />
@@ -26,11 +28,12 @@ export default function NotFound() {
           </p>
 
           {/* Button */}
-          <button
+          <Link
+            href="/"
             className="md:w-1/3 w-5/6 bg-LB-yellow text-LB-black font-bold text-sm px-4 py-4 my-20 rounded-full flex items-center justify-center gap-2 hover:brightness-95 transition-all mt-auto"
           >
             Home Page
-          </button>
+          </Link>
         </div>
       </section>
     </>

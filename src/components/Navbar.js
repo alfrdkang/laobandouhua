@@ -90,7 +90,7 @@ export default function Navbar({ disableLogo = false }) {
 
         {/* Mobile Navigation Menu */}
         {menuOpen && (
-          <nav className="sm:hidden flex flex-col items-center gap-3 pb-14">
+          <nav className="sm:hidden flex flex-col items-center gap-3 pb-5">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}
                 className="text-md text-LB-black font-bold hover:underline my-2">
