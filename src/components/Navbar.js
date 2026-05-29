@@ -52,7 +52,7 @@ export default function Navbar() {
           <div className="flex-1 flex items-center justify-end">
             {/* Order Now */}
             <div className="hidden sm:flex flex-col items-center">
-              <a href="/order"
+              <a href="https://wa.me/6586862808?text=Hi%20I'm%20interested%20in%20your%20beancurd%20"
                 className="bg-white text-LB-black font-bold text-sm px-6 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-150 whitespace-nowrap">
                 Order Now
               </a>

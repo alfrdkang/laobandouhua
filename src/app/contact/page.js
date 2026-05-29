@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-// ─── Contact Cards Data ───────────────────────────────────────────────────────
+// Contact Cards Data
 const CONTACT_CARDS = [
   {
     id: 'franchise',
@@ -72,7 +72,7 @@ const CAREER_CARD = {
   btnHref: 'mailto:laobanyf@gmail.com',
 };
 
-// ─── Reusable Components ──────────────────────────────────────────────────────
+// Reusable Components
 function ContactCard({ icon, title, body, btnLabel, btnHref, "data-aos": dataAos, "data-aos-delay": dataAosDelay }) {
   return (
     <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-7 flex flex-col gap-5" data-aos={dataAos} data-aos-delay={dataAosDelay}>
@@ -118,7 +118,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ── Top Contact Cards (Franchise + Events) ─────────────────────────── */}
+      {/* Top Contact Cards (Franchise + Events) */}
       <section className="w-full bg-white py-8 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
           {CONTACT_CARDS.map((card, index) => (
@@ -127,7 +127,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ── Career + Create Something Together ────────────────────────────── */}
+      {/* Career + Create Something Together */}
       <section className="w-full bg-white py-8 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
           {/* Career Card */}
@@ -170,7 +170,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ── Get In Touch ──────────────────────────────────────────────────── */}
+      {/* Get In Touch */}
       <section className="w-full flex flex-col md:flex-row items-center justify-center bg-gray-50 py-14 px-6">
         <div className="w-5/6 md:w-1/2" data-aos="fade-right">
           {/* Section heading */}
@@ -257,7 +257,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ── CTA Banner ────────────────────────────────────────────────────── */}
+      {/* CTA Banner */}
       <section className="w-full bg-white py-14 px-12">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center gap-8">
           <img
@@ -272,7 +272,7 @@ export default function Contact() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center sm:justify-start items-center">
               <Link
-                href="#"
+                href="https://wa.me/6586862808?text=Hi%20I'm%20interested%20in%20your%20beancurd%20"
                 className="bg-LB-yellow text-LB-black font-bold text-base px-7 py-2.5 rounded-full hover:brightness-95 transition-all shadow-sm"
               >
                 Order Now
@@ -288,7 +288,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ── Tagline ───────────────────────────────────────────────────────── */}
+      {/* Tagline */}
       <section className="w-full bg-white py-20 md:py-28 px-6 flex flex-col items-center justify-center">
         <img
           src="/images/tagline.png"

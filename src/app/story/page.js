@@ -75,7 +75,7 @@ export default function Story() {
                 </div>
             </section>
 
-            {/* Why Lao Ban Beancurd is Different */}
+            {/* Why Different */}
             <section className="w-full bg-white pb-20 md:pb-28">
                 <div className="w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-12 md:gap-16">
                     <div data-aos="fade-right" className="flex-1 flex flex-col justify-center text-left">

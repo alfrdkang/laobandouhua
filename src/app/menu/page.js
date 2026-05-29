@@ -74,7 +74,7 @@ function SectionHeading({ children }) {
 
 function MenuCard({ name, desc, img, isNew }) {
   return (
-    <div className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100" data-aos="fade-up">
+    <div className="flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100" data-aos="fade-up">
       <div className="relative">
         {isNew && (
           <span className="absolute top-2 left-2 bg-LB-yellow text-LB-black text-xs font-bold px-2 py-0.5 rounded">
@@ -122,7 +122,7 @@ export default function Menu() {
       <section className="w-full bg-white py-10 px-6">
         <div className="max-w-6xl mx-auto">
           <SectionHeading>New Products</SectionHeading>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-5">
             {NEW_PRODUCTS.map((item) => (
               <MenuCard key={item.name} {...item} />
             ))}
@@ -134,7 +134,7 @@ export default function Menu() {
       <section className="w-full bg-white py-10 px-6">
         <div className="max-w-6xl mx-auto">
           <SectionHeading>Signature Beancurd</SectionHeading>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {BEANCURD.map((item) => (
               <MenuCard key={item.name} {...item} />
             ))}
@@ -146,7 +146,7 @@ export default function Menu() {
       <section className="w-full bg-white py-10 px-6">
         <div className="max-w-6xl mx-auto">
           <SectionHeading>Signature Soya Milk</SectionHeading>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {SOYA_MILK.map((item) => (
               <MenuCard key={item.name} {...item} />
             ))}
@@ -169,7 +169,7 @@ export default function Menu() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center sm:justify-start items-center">
               <Link
-                href="#"
+                href="https://wa.me/6586862808?text=Hi%20I'm%20interested%20in%20your%20beancurd%20"
                 className="bg-LB-yellow text-LB-black font-bold text-base px-7 py-2.5 rounded-full hover:brightness-95 transition-all shadow-sm"
               >
                 Order Now

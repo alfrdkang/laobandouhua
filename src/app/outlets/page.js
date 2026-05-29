@@ -1,176 +1,79 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const SUPERMARKET_CHAINS = [
-  {
-    id: 'sheng-siong',
-    name: 'Sheng Siong Supermarket',
-    img: '/images/Outlets/Supermarkets/shengsiong.png',
-    locationPreview: 'Bedok, Tampines, Woodlands, Hougang & more',
-    areas: [
-      {
-        name: 'Central', locations: [
-          { address: '301 Geylang Road #01-02 & #02-00', mapsUrl: 'https://maps.google.com' },
-          { address: '1 Jalan Berseh #B1-02/22', mapsUrl: 'https://maps.google.com' },
-          { address: 'Blk 52 Chin Swee Road #01-25', mapsUrl: 'https://maps.google.com' },
-          { address: 'Blk 51 Jalan Satu #01-10', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'East', locations: [
-          { address: 'Blk 216 Bedok North St 1 #01-96', mapsUrl: 'https://maps.google.com' },
-          { address: 'Blk 341 Tampines St 33 #B1-03', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'North', locations: [
-          { address: 'Blk 888 Woodlands Drive 50 #01-746', mapsUrl: 'https://maps.google.com' },
-          { address: 'Blk 306 Sembawang Vista #01-05', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'South', locations: [
-          { address: 'Blk 78 Moh Guan Terrace #01-30', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'West', locations: [
-          { address: 'Blk 503 Jurong West St 52 #01-141', mapsUrl: 'https://maps.google.com' },
-          { address: 'Blk 226 Boon Lay Place #01-123', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'North-East', locations: [
-          { address: 'Blk 681 Hougang Ave 8 #01-831', mapsUrl: 'https://maps.google.com' },
-          { address: 'Blk 306 Punggol Rd #B1-K9', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-    ],
-  },
-  {
-    id: 'giant',
-    name: 'Giant Supermarket',
-    img: '/images/Outlets/Supermarkets/giant.png',
-    locationPreview: 'Bedok, Tampines, Woodlands, Hougang & more',
-    areas: [
-      {
-        name: 'Central', locations: [
-          { address: 'IMM Building #02-11, 2 Jurong East St 21', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'East', locations: [
-          { address: 'Bedok Mall #B2-K6, 311 New Upper Changi Rd', mapsUrl: 'https://maps.google.com' },
-          { address: 'Tampines Mall #B1-K3, 4 Tampines Central 5', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'North', locations: [
-          { address: 'Causeway Point #B1-K12, 1 Woodlands Square', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'South', locations: [
-          { address: 'Vivocity #B2-K5, 1 Harbourfront Walk', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'West', locations: [
-          { address: 'Jurong Point #B1-K3, 1 Jurong West Central 2', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'North-East', locations: [
-          { address: 'Hougang Mall #B1-K5, 90 Hougang Ave 10', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-    ],
-  },
-  {
-    id: 'buzz',
-    name: 'Buzz Shop',
-    img: '/images/Outlets/Supermarkets/buzz.png',
-    locationPreview: 'Bedok, Tampines, Woodlands, Hougang & more',
-    areas: [
-      {
-        name: 'Central', locations: [
-          { address: 'City Hall MRT Station #B1-01', mapsUrl: 'https://maps.google.com' },
-          { address: 'Raffles Place MRT Station #B1-05', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'East', locations: [
-          { address: 'Bedok MRT Station #01-02', mapsUrl: 'https://maps.google.com' },
-          { address: 'Tampines MRT Station #01-08', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'North', locations: [
-          { address: 'Woodlands MRT Station #01-03', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'South', locations: [
-          { address: 'Harbourfront MRT Station #B1-02', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'West', locations: [
-          { address: 'Jurong East MRT Station #01-06', mapsUrl: 'https://maps.google.com' },
-          { address: 'Clementi MRT Station #01-04', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'North-East', locations: [
-          { address: 'Hougang MRT Station #01-07', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-    ],
-  },
-  {
-    id: 'ang-mo',
-    name: 'Ang Mo Supermarket',
-    img: '/images/Outlets/Supermarkets/angmo.png',
-    locationPreview: 'Bedok, Tampines, Woodlands, Hougang & more',
-    areas: [
-      {
-        name: 'Central', locations: [
-          { address: 'Blk 79 Redhill Lane #01-20', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'East', locations: [
-          { address: 'Blk 538 Bedok North St 3 #01-521', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'North', locations: [
-          { address: 'Blk 456 Sembawang Dr #01-120', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'South', locations: [
-          { address: 'Blk 1 Depot Close #01-01', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'West', locations: [
-          { address: 'Blk 338 Bukit Batok St 34 #01-361', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-      {
-        name: 'North-East', locations: [
-          { address: 'Blk 681 Hougang Ave 8 #01-820', mapsUrl: 'https://maps.google.com' },
-        ]
-      },
-    ],
-  },
+const CHAIN_META = [
+  { id: 'sheng-siong', name: 'Sheng Siong Supermarket', img: '/images/Outlets/Supermarkets/shengsiong.png', csv: 'ShengSiongOutlets.csv' },
+  { id: 'giant', name: 'Giant Supermarket', img: '/images/Outlets/Supermarkets/giant.png', csv: 'GiantOutlets.csv' },
+  { id: 'buzz', name: 'Buzz Shop', img: '/images/Outlets/Supermarkets/buzz.png', csv: 'BuzzShopOutlets.csv' },
+  { id: 'ang-mo', name: 'Ang Mo Supermarket', img: '/images/Outlets/Supermarkets/angmo.png', csv: 'AngMoSupermarketOutlets.csv' },
 ];
 
+function parseCSVLine(line) {
+  const fields = [];
+  let current = '';
+  let inQuotes = false;
+
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (inQuotes) {
+      if (ch === '"' && line[i + 1] === '"') {
+        current += '"';
+        i++;
+      } else if (ch === '"') {
+        inQuotes = false;
+      } else {
+        current += ch;
+      }
+    } else {
+      if (ch === '"') {
+        inQuotes = true;
+      } else if (ch === ',') {
+        fields.push(current);
+        current = '';
+      } else {
+        current += ch;
+      }
+    }
+  }
+  fields.push(current);
+  return fields;
+}
+
+/* Parse array of { filter, location, address, mapsUrl } */
+function parseCSV(text) {
+  const lines = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n').filter(Boolean);
+  if (lines.length < 2) return [];
+
+  return lines.slice(1).map((line) => {
+    const fields = parseCSVLine(line);
+    return {
+      filter: (fields[0] || '').trim(),
+      location: (fields[1] || '').trim(),
+      address: (fields[2] || '').trim(),
+      mapsUrl: (fields[3] || '').trim(),
+    };
+  }).filter((row) => row.filter && row.address);
+}
+
+function groupByArea(rows) {
+  const map = {};
+  for (const row of rows) {
+    if (!map[row.filter]) map[row.filter] = [];
+    map[row.filter].push({ address: row.address, location: row.location, mapsUrl: row.mapsUrl });
+  }
+  return Object.entries(map).map(([name, locations]) => ({ name, locations }));
+}
+
+function buildPreview(areas) {
+  const names = areas.map((a) => a.name);
+  if (names.length <= 3) return names.join(', ');
+  return names.slice(0, 3).join(', ') + ' & more';
+}
+
 const ALL_LOCATIONS = [
-  // ── MRT / Bus Interchange ──────────────────────────────────────────────────
+  // MRT / Bus Interchange
   { id: 'amk-interchange', name: 'Ang Mo Kio Bus Interchange', category: 'mrt-bus', categoryLabel: 'MRT / Bus Interchange', address: '53 Ang Mo Kio Ave 3, Singapore 569933', mapsUrl: 'https://maps.app.goo.gl/tWMj3oVGgcFhDo27A', img: '/images/Outlets/AngMoKioBusInterchange.jpeg' },
   { id: 'bedok-interchange', name: 'Bedok Bus Interchange', category: 'mrt-bus', categoryLabel: 'MRT / Bus Interchange', address: 'Blk 209 New Upper Changi Rd, Singapore 460209', mapsUrl: 'https://maps.app.goo.gl/hD3KbVJAivArMBHU7', img: '/images/Outlets/BedokBusInterchange.jpeg' },
   { id: 'bishan-mrt', name: 'Bishan MRT Station', category: 'mrt-bus', categoryLabel: 'MRT / Bus Interchange', address: '1 Bishan Place, Singapore 579841', mapsUrl: 'https://maps.app.goo.gl/ouDqzYGDRhVGP4rB7', img: '/images/Outlets/BishanMRT.jpeg' },
@@ -185,7 +88,7 @@ const ALL_LOCATIONS = [
   { id: 'woodlands-mrt', name: 'Woodlands MRT Station #01-23', category: 'mrt-bus', categoryLabel: 'MRT / Bus Interchange', address: '900 South Woodlands Drive, Singapore 730900', mapsUrl: 'https://maps.app.goo.gl/X8X8hGpUvN9n291P9', img: '/images/Outlets/WoodlandsMRT.jpeg' },
   { id: 'yew-tee-mrt', name: 'Yew Tee MRT Station', category: 'mrt-bus', categoryLabel: 'MRT / Bus Interchange', address: '61 Choa Chu Kang North 6, Singapore 689577', mapsUrl: 'https://maps.app.goo.gl/CJLCQprrzRoyKDm39', img: '/images/Outlets/YewTeeMRTStation.jpeg' },
 
-  // ── Neighbourhood Stores ───────────────────────────────────────────────────
+  // Neighbourhood Stores
   { id: 'bishan-blk282', name: 'BLK 282, Bishan St 22', category: 'neighbourhood', categoryLabel: 'Neighbourhood Stores', address: 'Blk 282 Bishan St 22 #01-183, Singapore 570282', mapsUrl: 'https://maps.app.goo.gl/dc3eP7wDWPmRyTHE6', img: '/images/Outlets/BLK282BishanSt22.jpeg' },
   { id: 'clementi-blk441a', name: 'BLK 441A, Clementi Ave 3', category: 'neighbourhood', categoryLabel: 'Neighbourhood Stores', address: 'Blk 441A Clementi Ave 3, Singapore 121441', mapsUrl: 'https://maps.app.goo.gl/fFNneuzewgYZ6rwQ9', img: '/images/Outlets/BLK441AClementi.jpeg' },
 ];
@@ -207,7 +110,7 @@ function ImgOrPlaceholder({ src, alt, className }) {
   );
 }
 
-// Supermarket card — dropdown state is lifted to the grid
+// Supermarket card
 function SupermarketCard({ chain, isOpen, onToggle, selectedArea, onSelectArea }) {
   return (
     <div className="relative bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col">
@@ -247,7 +150,7 @@ function SupermarketCard({ chain, isOpen, onToggle, selectedArea, onSelectArea }
               <div className="px-4 py-3 border-b border-gray-100 bg-gray-50">
                 <p className="text-sm font-semibold text-LB-black text-center">Select Area</p>
               </div>
-              <ul>
+              <ul className="max-h-64 overflow-y-auto">
                 {chain.areas.map((area) => (
                   <li key={area.name}>
                     <button
@@ -277,23 +180,32 @@ function SupermarketCard({ chain, isOpen, onToggle, selectedArea, onSelectArea }
                 </button>
                 <p className="text-sm font-semibold text-LB-black flex-1 text-center pr-4">{selectedArea.name}</p>
               </div>
-              <ul>
+              <ul className="max-h-64 overflow-y-auto">
                 {selectedArea.locations.map((loc) => (
                   <li key={loc.address}>
-                    <a
-                      href={loc.mapsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-between px-4 py-3 bg-white hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0"
-                    >
-                      <div className="flex items-start gap-2">
-                        <span className="w-2 h-2 rounded-full bg-LB-yellow shrink-0 mt-1" />
-                        <span className="text-sm text-LB-black leading-snug">{loc.address}</span>
+                    {loc.mapsUrl && loc.mapsUrl !== 'null' ? (
+                      <a
+                        href={loc.mapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full flex items-center justify-between px-4 py-3 bg-white hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0"
+                      >
+                        <div className="flex items-start gap-2">
+                          <span className="w-2 h-2 rounded-full bg-LB-yellow shrink-0 mt-1" />
+                          <span className="text-sm text-LB-black leading-snug">{loc.address}</span>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400 shrink-0 ml-2">
+                          <path d="M9 18l6-6-6-6" />
+                        </svg>
+                      </a>
+                    ) : (
+                      <div className="w-full flex items-center justify-between px-4 py-3 bg-white border-b border-gray-100 last:border-b-0">
+                        <div className="flex items-start gap-2">
+                          <span className="w-2 h-2 rounded-full bg-LB-yellow shrink-0 mt-1" />
+                          <span className="text-sm text-LB-black leading-snug">{loc.address}</span>
+                        </div>
                       </div>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400 shrink-0 ml-2">
-                        <path d="M9 18l6-6-6-6" />
-                      </svg>
-                    </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -305,7 +217,7 @@ function SupermarketCard({ chain, isOpen, onToggle, selectedArea, onSelectArea }
   );
 }
 
-// ─── Individual location card ─────────────────────────────────────────────────
+// Individual location card
 function LocationCard({ outlet }) {
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
@@ -323,17 +235,26 @@ function LocationCard({ outlet }) {
 
         <p className="text-xs text-gray-500 leading-relaxed">{outlet.address}</p>
 
-        <a
-          href={outlet.mapsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-auto w-full bg-LB-yellow text-LB-black font-bold text-xs px-4 py-2 rounded-full flex items-center justify-center gap-1.5 hover:brightness-95 transition-all"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
-          </svg>
-          Get Directions
-        </a>
+        {outlet.mapsUrl && outlet.mapsUrl !== 'null' ? (
+          <a
+            href={outlet.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-auto w-full bg-LB-yellow text-LB-black font-bold text-xs px-4 py-2 rounded-full flex items-center justify-center gap-1.5 hover:brightness-95 transition-all"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
+            </svg>
+            Get Directions
+          </a>
+        ) : (
+          <div className="mt-auto w-full bg-gray-100 text-gray-400 font-bold text-xs px-4 py-2 rounded-full flex items-center justify-center gap-1.5 cursor-not-allowed">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
+            </svg>
+            No Map Available
+          </div>
+        )}
       </div>
     </div>
   );
@@ -343,6 +264,33 @@ export default function Outlets() {
   const [activeCategory, setActiveCategory] = useState('supermarkets');
   const [openChainId, setOpenChainId] = useState(null);
   const [selectedArea, setSelectedArea] = useState(null);
+  const [supermarketChains, setSupermarketChains] = useState([]);
+
+  useEffect(() => {
+    async function loadCSVs() {
+      const results = await Promise.all(
+        CHAIN_META.map(async (meta) => {
+          try {
+            const res = await fetch(`/supermarketLoc/${meta.csv}`);
+            const text = await res.text();
+            const rows = parseCSV(text);
+            const areas = groupByArea(rows);
+            return {
+              id: meta.id,
+              name: meta.name,
+              img: meta.img,
+              locationPreview: buildPreview(areas),
+              areas,
+            };
+          } catch {
+            return { id: meta.id, name: meta.name, img: meta.img, locationPreview: '', areas: [] };
+          }
+        })
+      );
+      setSupermarketChains(results);
+    }
+    loadCSVs();
+  }, []);
 
   const handleCategoryChange = (id) => {
     setActiveCategory(id);
@@ -407,7 +355,7 @@ export default function Outlets() {
           {/* Supermarket chains */}
           {showSupermarkets && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {SUPERMARKET_CHAINS.map((chain) => (
+              {supermarketChains.map((chain) => (
                 <SupermarketCard
                   key={chain.id}
                   chain={chain}
@@ -449,7 +397,7 @@ export default function Outlets() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center sm:justify-start items-center">
               <Link
-                href="#"
+                href="https://wa.me/6586862808?text=Hi%20I'm%20interested%20in%20your%20beancurd%20"
                 className="bg-LB-yellow text-LB-black font-bold text-base px-7 py-2.5 rounded-full hover:brightness-95 transition-all shadow-sm"
               >
                 Order Now

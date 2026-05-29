@@ -4,14 +4,15 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Banner */}
-      <img
-        src="/images/Home/banner.png"
-        alt="Hero Banner"
-        className="w-full bg-gray-300 flex items-center justify-center object-cover"
-        style={{ height: "800px" }}
-        data-aos="fade-in"
-      >
-      </img>
+      <picture data-aos="fade-in">
+        <source media="(min-width: 1024px)" srcSet="/images/Home/banner/1920x1080.webp" />
+        <source media="(min-width: 640px)" srcSet="/images/Home/banner/1280×800.webp" />
+        <img
+          src="/images/Home/banner/1080×1350.webp"
+          alt="Hero Banner"
+          className="w-full h-auto object-cover"
+        />
+      </picture>
 
       {/* Legacy Section */}
       <section className="w-full bg-white pt-10 md:pt-28">
