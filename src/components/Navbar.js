@@ -11,6 +11,15 @@ const navLinks = [
   { label: 'Contact', href: '/contact' },
 ];
 
+const mobileNavLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Our Story', href: '/story' },
+  { label: 'Menu', href: '/menu' },
+  { label: 'Outlets', href: '/outlets' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Order Now', href: "https://wa.me/6586862808?text=Hi%20I'm%20interested%20in%20your%20beancurd%20"},
+];
+
 export default function Navbar({ disableLogo = false }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -43,13 +52,11 @@ export default function Navbar({ disableLogo = false }) {
           </div>
 
           {/* Logo */}
-          {!disableLogo && (
-            <div className="order-1 w-full flex p-4 sm:p-0 justify-center mb-4 sm:mb-0 sm:order-2 sm:w-auto sm:flex-1">
-              <Link href="/" className="my-4 sm:my-0 w-full sm:w-auto flex items-center select-none justify-center">
-                <img src="/images/Navbar/logo.png" alt="Logo" className="w-full h-auto max-w-screen sm:max-w-none sm:h-24 md:h-28 lg:h-32 object-contain" />
-              </Link>
-            </div>
-          )}
+          <div className={`order-1 w-full flex  justify-center sm:order-2 sm:w-auto sm:flex-1 ${disableLogo ? 'hidden sm:flex' : 'flex'}`}>
+            <Link href="/" className="w-full sm:w-auto flex items-center select-none justify-center">
+              <img src="/images/Navbar/logo.png" alt="Logo" className="w-full h-auto object-contain" />
+            </Link>
+          </div>
 
           <div className="order-3 flex-1 flex items-center justify-end">
             {/* Order Now */}
@@ -91,7 +98,7 @@ export default function Navbar({ disableLogo = false }) {
         {/* Mobile Navigation Menu */}
         {menuOpen && (
           <nav className="sm:hidden flex flex-col items-center gap-3 pb-5">
-            {navLinks.map((link) => (
+            {mobileNavLinks.map((link) => (
               <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}
                 className="text-md text-LB-black font-bold hover:underline my-2">
                 {link.label}
