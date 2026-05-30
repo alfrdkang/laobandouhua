@@ -6,7 +6,7 @@ export default function HomePage() {
     <>
       <Navbar disableLogo={true} />
       {/* Hero Banner */}
-      <picture data-aos="fade-in">
+      <picture>
         <source media="(min-width: 1024px)" srcSet="/images/Home/banner/1920x1080.webp" />
         <source media="(min-width: 640px)" srcSet="/images/Home/banner/1280×800.webp" />
         <img
